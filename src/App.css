@@ -1,0 +1,547 @@
+:root {
+  --font-family-sans-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-serif: 'Merriweather', Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  /* Define base font size and line height */
+  --base-font-size: 16px;
+  --base-line-height: 1.7;
+}
+
+/* === Resets & Base Styles === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  background-color: #f8f9fa;
+  color: #343a40;
+  line-height: 1.6;
+  font-size: var(--base-font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Header === */
+.site-header {
+  font-family: var(--font-family-sans-serif);
+}
+.header-text h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+.header-text p {
+  font-size: 1em;
+}
+
+/* === Feed & Post Wrapper === */
+.post-meta {
+    font-size: 0.78em;
+}
+
+/* === Markdown Post Specifics === */
+.markdown-post .post-title {
+  font-family: var(--font-family-sans-serif);
+  font-size: 1.8em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.markdown-content {
+  font-family: var(--font-family-serif);
+  font-size: 1.05em;
+  line-height: var(--base-line-height);
+  color: #212529;
+}
+.markdown-content h2,
+.markdown-content h3 {
+   font-family: var(--font-family-sans-serif);
+   font-weight: 700;
+   margin-top: 2.2em;
+   line-height: 1.4;
+}
+.markdown-content strong { font-weight: 700; }
+.markdown-content em { font-style: italic; }
+
+.markdown-content code,
+.markdown-content pre,
+.markdown-content pre code {
+   /* Reset font for code blocks to monospace */
+   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+   font-size: 0.9em;
+}
+
+/* === Bluesky Post Specifics === */
+.bluesky-post .post-content p {
+  font-family: var(--font-family-serif);
+  font-size: 1.05em;
+  line-height: var(--base-line-height);
+  color: #212529;
+}
+.bluesky-post .post-content p {
+  font-family: var(--font-family-serif);
+  font-size: 1.3em;
+  line-height: 1.65;
+  color: #343a40;
+  margin-top: 0.5em;
+  margin-bottom: 1.2em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.bluesky-post .post-content p a {
+    color: #0056b3;
+}
+
+/* === Pagination === */
+.page-link {
+  font-family: var(--font-family-sans-serif);
+  font-weight: 500;
+}
+.page-item.active .page-link {
+    font-weight: 700;
+}
+
+/* === Loading / Error / Info Messages === */
+.loading-message,
+.error-message,
+.info-message {
+    font-family: var(--font-family-sans-serif);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+    padding-top: 1rem;
+  }
+  
+  /* === App Layout === */
+  .app-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  main {
+      margin-top: 2rem;
+  }
+  
+  /* === Header === */
+  .site-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 1.5rem;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+  
+  .logo-container {
+    flex-shrink: 0;
+  }
+  
+  .logo-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+  }
+  
+  .header-text {
+    flex-grow: 1;
+  }
+  
+  .header-text h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.25rem;
+  }
+  
+  .header-text p {
+    color: #6c757d;
+    font-size: 0.95em;
+  }
+  
+  .search-bar {
+    flex-basis: 250px;
+    flex-grow: 1;
+    max-width: 350px;
+    margin-left: auto;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.95em;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .search-bar input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* === Feed & Post Wrapper === */
+  .feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .post-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+  }
+  
+  .post-meta {
+      font-size: 0.8em;
+      color: #868e96;
+      text-align: right;
+      padding-right: 5px;
+  }
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.post-meta {
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.8em;
+  color: #868e96;
+  text-align: right;
+  padding-right: 5px;
+}
+.post-meta-link {
+  color: #868e96;
+  text-decoration: none;
+}
+.post-meta-link:hover {
+  color: #343a40;
+  text-decoration: underline;
+}
+
+.post-meta span {
+  color: #868e96;
+}
+  
+  
+  /* === General Post Card Styling === */
+  .post-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+  }
+  
+  /* === Markdown Post Specifics === */
+  .markdown-post .featured-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    display: block;
+    background-color: #e9ecef;
+  }
+  
+  .markdown-post .post-title {
+    font-size: 1.9em;
+    font-weight: 600;
+    margin: 1.75rem 1.75rem 0.75rem 1.75rem;
+    color: #212529;
+    line-height: 1.3;
+  }
+  
+  .post-content {
+    padding: 0.5rem 1.75rem 1.75rem 1.75rem;
+  }
+  
+  /* Reset margin for first/last elements inside content area */
+  .post-content > *:first-child { margin-top: 0; }
+  .post-content > *:last-child { margin-bottom: 0; }
+  
+  .markdown-content h2 {
+    font-size: 1.5em;
+    margin: 2em 0 0.8em 0;
+    font-weight: 600;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.4em;
+  }
+  .markdown-content h3 {
+    font-size: 1.3em;
+    margin: 1.8em 0 0.6em 0;
+    font-weight: 600;
+  }
+  .markdown-content p { margin-bottom: 1.2em; }
+  .markdown-content strong { font-weight: 600; }
+  .markdown-content em { font-style: italic; }
+  
+  .markdown-content a {
+    color: #0056b3;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 86, 179, 0.2);
+    transition: border-color 0.2s ease;
+  }
+  .markdown-content a:hover {
+    border-bottom-color: rgba(0, 86, 179, 0.5);
+  }
+  
+  .markdown-content ul, .markdown-content ol {
+    margin-left: 1.8em;
+    margin-bottom: 1.2em;
+  }
+  .markdown-content li { margin-bottom: 0.4em; }
+  
+  .markdown-content code:not(pre > code) {
+    background-color: #e9ecef;
+    padding: 0.2em 0.45em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: #343a40;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    word-break: break-word;
+  }
+  
+  /* Code blocks (Syntax Highlighting) */
+  .markdown-content pre {
+    margin: 1.5em 0 !important;
+    border-radius: 6px;
+    font-size: 0.9em;
+    overflow-x: auto;
+  }
+  .markdown-content pre code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    padding: 1em !important;
+    display: block;
+    line-height: 1.5;
+  }
+  
+  .markdown-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1.5em auto;
+    display: block;
+    border: 1px solid #e9ecef;
+  }
+  
+  /* YouTube Embed Styling */
+  .youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #f0f0f0; /* Background while loading */
+    margin: 1.5em 0;
+    border-radius: 6px;
+  }
+  .youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* === Bluesky Post Specifics === */
+  .bluesky-post .post-content {
+      padding: 1.5rem 1.75rem;
+  }
+  .bluesky-post .post-content p {
+    margin-bottom: 0.5em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .bluesky-post a {
+    color: #0056b3;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 86, 179, 0.2);
+  }
+  .bluesky-post a:hover {
+     border-bottom-color: rgba(0, 86, 179, 0.5);
+  }
+  
+  /* === Pagination === */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .page-item {
+    margin: 0 2px;
+  }
+  
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.9rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0056b3;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    font-size: 0.9rem;
+    border-radius: 4px;
+  }
+  
+  .page-link:hover {
+    z-index: 2;
+    color: #003d80;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+  
+  .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+    opacity: 0.6;
+  }
+  
+  /* === Loading / Error / Info Messages === */
+  .loading-message,
+  .error-message,
+  .info-message {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 1.1em;
+    color: #6c757d;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-weight: 500;
+  }
+  .info-message {
+      color: #495057;
+  }
+  /* === Bluesky Post Image Thumbnails === */
+.bluesky-thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.bluesky-thumbnail {
+  display: block;
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  background-color: #f8f9fa;
+}
+
+.bluesky-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: #bdbdbd;
+}
+
+/* === Bluesky Post Rich Text Facets === */
+.bluesky-link,
+.bluesky-mention,
+.bluesky-hashtag {
+    color: #0056b3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bluesky-link:hover,
+.bluesky-mention:hover,
+.bluesky-hashtag:hover {
+    border-bottom-color: rgba(0, 86, 179, 0.5);
+}
+
+.bluesky-mention {
+    color: #004085;
+    font-weight: 500; 
+}
+
+.bluesky-hashtag {
+     color: #17a2b8;
+}
+
+.bluesky-post .post-content p {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+footer p {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* === Lightbox Styles (from yet-another-react-lightbox/styles.css) === */
+:root {
+  --yarl__color_backdrop: rgba(0, 0, 0, .85);
+}
+  
+  /* === Responsiveness === */
+  @media (max-width: 600px) {
+    .header-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+  
+    .header-text {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  
+    .logo-container {
+       margin-bottom: 0.5rem;
+    }
+  
+    .search-bar {
+        width: 100%;
+        max-width: auto;
+        margin-left: 0;
+    }
+    .post-card .post-title {
+        font-size: 1.6em;
+    }
+    .post-content {
+        padding: 0.5rem 1.25rem 1.25rem 1.25rem;
+    }
+  }
