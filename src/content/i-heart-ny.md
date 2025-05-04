@@ -7,7 +7,7 @@ featuredImage: '/blog-images/fake-broadway.jpeg'
 
 The journey from Connecticut to New York City on Metro North has a comforting familiarity. As the train glides past suburban stations and eventually along the coastline, the anticipation of a night in the city builds. Arriving at Grand Central Terminal is always magical - the celestial ceiling of the main concourse never fails to inspire awe, even after countless visits.
 
-Our destination: Hell's Kitchen, specifically B Side Pizza & Wine Bar on 51st Street. Their Detroit-style pizza is a revelation - thick, crispy edges with a chewy interior, topped with perfectly caramelized cheese that creates those coveted crispy bits. The vodka sauce pizza, in particular, hits all the right notes with its creamy, slightly spicy sauce and fresh basil.
+Our destination: Hell's Kitchen, specifically B Side Pizza & Wine Bar on 51st Street. Their pizza is a revelation - thick, crispy edges with a chewy interior, topped with perfectly caramelized cheese that creates those coveted crispy bits. The meat adds a little spiciness that the honey balances out with its sweetness. The perfect NYC bites.
 
 After dinner, it was a short walk to the Music Box Theatre for what would prove to be one of the most remarkable theatrical experiences I've witnessed - Sarah Snook in "The Picture of Dorian Gray." Known to many as Shiv Roy from Succession, Snook demonstrates her extraordinary range by portraying 26 different characters in this adaptation of Oscar Wilde's classic novel. Through subtle shifts in posture, voice, and mannerism, she brings each character vividly to life, seamlessly transitioning between them in this technically ambitious one-woman show.
 
