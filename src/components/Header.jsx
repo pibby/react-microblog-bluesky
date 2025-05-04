@@ -10,6 +10,7 @@ function Header({ logoSrc, title, description, searchQuery, setSearchQuery }) {
         <div className="header-text">
           <h1>{title}</h1>
           {description && <p>{description}</p>}
+          <p><a href="/posts">Posts</a> and skeets are my own views and not those of my employer.</p>
         </div>
       </div>
          <div className="search-bar">

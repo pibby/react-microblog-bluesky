@@ -183,6 +183,15 @@ main {
   font-size: 0.95em;
 }
 
+.bluesky-post a {
+  color: #0056b3;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 86, 179, 0.2);
+}
+.bluesky-post a:hover {
+  border-bottom-color: rgba(0, 86, 179, 0.5);
+}
+
 .search-bar {
   flex-basis: 250px;
   flex-grow: 1;
@@ -393,12 +402,12 @@ main {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-.bluesky-post a {
+.header-text a {
   color: #0056b3;
   text-decoration: none;
   border-bottom: 1px solid rgba(0, 86, 179, 0.2);
 }
-.bluesky-post a:hover {
+.header-text a:hover {
   border-bottom-color: rgba(0, 86, 179, 0.5);
 }
 
