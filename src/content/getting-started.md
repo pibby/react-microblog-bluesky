@@ -2,7 +2,7 @@
 id: 'welcome'
 title: 'Welcome'
 timestamp: '2025-04-22T17:00:00Z'
-featuredImage: '/software-engineer.jpg' # Optional
+featuredImage: '/blog-images/software-engineer.jpg' # Optional
 ---
 
 This is a minimalist microblogging feed interface built with React and Vite. It displays a combined feed of local Markdown posts and live Bluesky posts from a specified user, featuring a clean, Medium-inspired design with custom fonts and animations.
