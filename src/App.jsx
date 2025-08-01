@@ -72,11 +72,27 @@ function App() {
                   // Add check for authorDid as it's needed for Bsky permalink on HomePage
                   if (!post?.record || !post?.uri || !post?.record?.createdAt || !post?.author?.did) return null;
                   const embedData = post.embed;
+
                   const images = (embedData?.$type === 'app.bsky.embed.images#view' && Array.isArray(embedData.images)) ? embedData.images : [];
+
+                  // ADD logic to extract video data
+                  let video = null; // Default to null
+                  // Construct the video object using the correct properties from the API response
+                  if (embedData?.$type === 'app.bsky.embed.video#view' && embedData.playlist && embedData.thumbnail) {
+      
+                    // Construct the video object using the direct properties from the API
+                    video = {
+                        thumbUrl: embedData.thumbnail,
+                        playlistUrl: embedData.playlist, // <<< STORE THIS
+                        alt: embedData.alt || ''
+                    };
+                }
+
                   const postContent = {
                       text: post.record.text || '',
                       facets: post.record.facets || [],
-                      images: images.map(img => ({ thumb: img.thumb, fullsize: img.fullsize, alt: img.alt || '', aspectRatio: img.aspectRatio }))
+                      images: images.map(img => ({ thumb: img.thumb, fullsize: img.fullsize, alt: img.alt || '', aspectRatio: img.aspectRatio })),
+                      video: video
                   };
                   // Include authorDid for HomePage Bsky links
                   return { id: post.uri, type: 'bluesky', timestamp: post.record.createdAt, authorDid: post.author.did, content: postContent };

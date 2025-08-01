@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RichText } from '@atproto/api';
+import VideoPlayer from './VideoPlayer';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
@@ -8,7 +9,8 @@ const BlueskyPost = ({ content }) => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Destructure text, facets, and images with defaults
-  const { text = '', facets = [], images = [] } = content || {};
+  const { text = '', facets = [], images = [], video = null } = content || {};
+
 
   // --- Rich Text Processing ---
   const rt = text ? new RichText({ text, facets }) : null; // Create RichText instance only if text exists
@@ -80,6 +82,16 @@ const BlueskyPost = ({ content }) => {
                 {renderedSegments}
             </p>
         )}
+
+        {video && (
+          <div className="bluesky-video-container">
+              <VideoPlayer
+                  src={video.playlistUrl} // Pass the playlist URL
+                  poster={video.thumbUrl} // Pass the thumbnail URL
+                  alt={video.alt}
+              />
+          </div>
+      )}
 
         {/* Render image thumbnails */}
         {images.length > 0 && (

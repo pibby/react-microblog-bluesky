@@ -538,6 +538,30 @@ main {
   word-wrap: break-word;
 }
 
+/* === Bluesky Post Video === */
+.bluesky-video-container {
+  margin: 1rem 0;
+  border-radius: 8px; /* Match card rounding */
+  overflow: hidden; /* Ensures video respects border-radius */
+  background-color: #000; /* Black background for letterboxing */
+}
+
+.bluesky-video {
+  display: block; /* Remove extra space below video */
+  width: 100%;    /* Make video responsive */
+  max-height: 500px; /* Prevent excessively tall videos */
+  height: auto;
+}
+
+/* Optional styling for video alt text/caption */
+.video-alt-text {
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.85em;
+  color: #6c757d; /* Gray accent */
+  padding: 0.5rem 0.2rem 0 0.2rem;
+  font-style: italic;
+}
+
 footer p {
   text-align: center;
   margin: 2rem 0;

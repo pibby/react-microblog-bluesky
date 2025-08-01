@@ -3,12 +3,12 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coy } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-// Function to extract YouTube Video ID from URL
+// Function to extract YouTube Video ID from URL (now supports Shorts)
 const getYouTubeId = (url) => {
-  // Updated Regex to handle various YouTube URL formats
-  const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  // This regex now explicitly looks for /watch?v=, /embed/, /v/, /shorts/, and youtu.be/ links
+  const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
   const match = url.match(regExp);
-  return match ? match[1] : null;
+  return match ? match[1] : null; // Return the video ID (the first capture group) if it matches
 };
 
 const MarkdownRenderer = ({ markdownText }) => {
