@@ -18,6 +18,7 @@ function Header({ logoSrc, title, description, searchQuery, setSearchQuery }) {
             type="text"
             placeholder="Search posts..."
             value={searchQuery}
+            aria-label="Search posts, press enter to search"
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>

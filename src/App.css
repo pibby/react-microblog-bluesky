@@ -4,10 +4,35 @@
     sans-serif;
   --font-family-serif: "Merriweather", Georgia, Cambria, "Times New Roman",
     Times, serif;
+  --font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
 
   /* Define base font size and line height */
   --base-font-size: 16px;
   --base-line-height: 1.7;
+
+  /* Color variables */
+  --color-primary: #0056b3;
+  --color-primary-hover: #003d80;
+  --color-primary-light: rgba(0, 86, 179, 0.2);
+  --color-primary-light-hover: rgba(0, 86, 179, 0.5);
+  --color-text-primary: #212529;
+  --color-text-secondary: #343a40;
+  --color-text-muted: #6c757d;
+  --color-background: #f8f9fa;
+  --color-white: #ffffff;
+  --color-border: #e9ecef;
+  --color-border-light: #dee2e6;
+  --color-border-input: #ced4da;
+  --color-border-input-focus: #80bdff;
+  --color-shadow-input: rgba(0, 123, 255, 0.25);
+  --color-error: #dc3545;
+  --color-info: #495057;
+  --color-mention: #004085;
+  --color-hashtag: #17a2b8;
+
+  /* Lightbox */
+  --yarl__color_backdrop: rgba(0, 0, 0, 0.85);
 }
 
 /* === Resets & Base Styles === */
@@ -19,117 +44,13 @@
 
 body {
   font-family: var(--font-family-sans-serif);
-  background-color: #f8f9fa;
-  color: #343a40;
+  background-color: var(--color-background);
+  color: var(--color-text-secondary);
   line-height: 1.6;
   font-size: var(--base-font-size);
+  padding-top: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* === Header === */
-.site-header {
-  font-family: var(--font-family-sans-serif);
-}
-.header-text h1 {
-  font-size: 2em;
-  font-weight: 700;
-}
-.header-text p {
-  font-size: 1em;
-}
-
-/* === Feed & Post Wrapper === */
-.post-meta {
-  font-size: 0.78em;
-}
-
-/* === Markdown Post Specifics === */
-.markdown-post .post-title {
-  font-family: var(--font-family-sans-serif);
-  font-size: 1.8em;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.markdown-content {
-  font-family: var(--font-family-serif);
-  font-size: 1.05em;
-  line-height: var(--base-line-height);
-  color: #212529;
-}
-.markdown-content h2,
-.markdown-content h3 {
-  font-family: var(--font-family-sans-serif);
-  font-weight: 700;
-  margin-top: 2.2em;
-  line-height: 1.4;
-}
-.markdown-content strong {
-  font-weight: 700;
-}
-.markdown-content em {
-  font-style: italic;
-}
-
-.markdown-content code,
-.markdown-content pre,
-.markdown-content pre code {
-  /* Reset font for code blocks to monospace */
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
-  font-size: 0.9em;
-}
-
-/* === Bluesky Post Specifics === */
-.bluesky-post .post-content p {
-  font-family: var(--font-family-serif);
-  font-size: 1.05em;
-  line-height: var(--base-line-height);
-  color: #212529;
-}
-.bluesky-post .post-content p {
-  font-family: var(--font-family-serif);
-  font-size: 1.3em;
-  line-height: 1.65;
-  color: #343a40;
-  margin-top: 0.5em;
-  margin-bottom: 1.2em;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.bluesky-post .post-content p a {
-  color: #0056b3;
-}
-
-/* === Pagination === */
-.page-link {
-  font-family: var(--font-family-sans-serif);
-  font-weight: 500;
-}
-.page-item.active .page-link {
-  font-weight: 700;
-}
-
-/* === Loading / Error / Info Messages === */
-.loading-message,
-.error-message,
-.info-message {
-  font-family: var(--font-family-sans-serif);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #f8f9fa;
-  color: #343a40;
-  line-height: 1.6;
-  padding-top: 1rem;
 }
 
 /* === App Layout === */
@@ -145,8 +66,9 @@ main {
 
 /* === Header === */
 .site-header {
+  font-family: var(--font-family-sans-serif);
   margin-bottom: 2rem;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 1.5rem;
 }
 
@@ -174,22 +96,23 @@ main {
 .header-text h1 {
   font-size: 1.8em;
   font-weight: 600;
-  color: #212529;
+  color: var(--color-text-primary);
   margin-bottom: 0.25rem;
 }
 
 .header-text p {
-  color: #6c757d;
+  color: var(--color-text-primary);
   font-size: 0.95em;
 }
 
-.bluesky-post a {
-  color: #0056b3;
+.header-text a {
+  color: var(--color-primary);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 86, 179, 0.2);
+  border-bottom: 1px solid var(--color-primary-light);
 }
-.bluesky-post a:hover {
-  border-bottom-color: rgba(0, 86, 179, 0.5);
+
+.header-text a:hover {
+  border-bottom-color: var(--color-primary-light-hover);
 }
 
 .search-bar {
@@ -202,16 +125,16 @@ main {
 .search-bar input {
   width: 100%;
   padding: 0.6rem 0.8rem;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--color-border-input);
   border-radius: 6px;
   font-size: 0.95em;
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .search-bar input:focus {
-  border-color: #80bdff;
+  border-color: var(--color-border-input-focus);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem var(--color-shadow-input);
 }
 
 /* === Feed & Post Wrapper === */
@@ -228,61 +151,34 @@ main {
 }
 
 .post-meta {
-  font-size: 0.8em;
-  color: #868e96;
-  text-align: right;
-  padding-right: 5px;
-}
-.post-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.post-meta {
   font-family: var(--font-family-sans-serif);
   font-size: 0.8em;
-  color: #868e96;
+  color: var(--color-text-primary);
   text-align: right;
   padding-right: 5px;
 }
+
 .post-meta-link {
-  color: #868e96;
+  color: var(--color-text-primary);
   text-decoration: none;
 }
+
 .post-meta-link:hover {
-  color: #343a40;
+  color: var(--color-text-secondary);
   text-decoration: underline;
 }
 
 .post-meta span {
-  color: #868e96;
+  color: var(--color-text-primary);
 }
 
 /* === General Post Card Styling === */
 .post-card {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
   overflow: hidden;
-  border: 1px solid #e9ecef;
-}
-
-/* === Markdown Post Specifics === */
-.markdown-post .featured-image {
-  width: 100%;
-  height: auto;
-  max-height: 350px;
-  object-fit: cover;
-  display: block;
-  background-color: #e9ecef;
-}
-
-.markdown-post .post-title {
-  font-size: 1.9em;
-  font-weight: 600;
-  margin: 1.75rem 1.75rem 0.75rem 1.75rem;
-  color: #212529;
-  line-height: 1.3;
+  border: 1px solid var(--color-border);
 }
 
 .post-content {
@@ -293,40 +189,78 @@ main {
 .post-content > *:first-child {
   margin-top: 0;
 }
+
 .post-content > *:last-child {
   margin-bottom: 0;
+}
+
+/* === Markdown Post Specifics === */
+.markdown-post .featured-image {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  display: block;
+  background-color: var(--color-border);
+}
+
+.markdown-post .post-title {
+  font-family: var(--font-family-sans-serif);
+  font-size: 1.9em;
+  font-weight: 600;
+  margin: 1.75rem 1.75rem 0.75rem 1.75rem;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.markdown-content {
+  font-family: var(--font-family-serif);
+  font-size: 1.05em;
+  line-height: var(--base-line-height);
+  color: var(--color-text-primary);
+}
+
+.markdown-content h2,
+.markdown-content h3 {
+  font-family: var(--font-family-sans-serif);
+  font-weight: 600;
+  margin-top: 2.2em;
+  line-height: 1.4;
 }
 
 .markdown-content h2 {
   font-size: 1.5em;
   margin: 2em 0 0.8em 0;
-  font-weight: 600;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid var(--color-border-light);
   padding-bottom: 0.4em;
 }
+
 .markdown-content h3 {
   font-size: 1.3em;
   margin: 1.8em 0 0.6em 0;
-  font-weight: 600;
 }
+
 .markdown-content p {
   margin-bottom: 1.2em;
 }
+
 .markdown-content strong {
   font-weight: 600;
 }
+
 .markdown-content em {
   font-style: italic;
 }
 
 .markdown-content a {
-  color: #0056b3;
+  color: var(--color-primary);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 86, 179, 0.2);
+  border-bottom: 1px solid var(--color-primary-light);
   transition: border-color 0.2s ease;
 }
+
 .markdown-content a:hover {
-  border-bottom-color: rgba(0, 86, 179, 0.5);
+  border-bottom-color: var(--color-primary-light-hover);
 }
 
 .markdown-content ul,
@@ -334,19 +268,26 @@ main {
   margin-left: 1.8em;
   margin-bottom: 1.2em;
 }
+
 .markdown-content li {
   margin-bottom: 0.4em;
 }
 
 .markdown-content code:not(pre > code) {
-  background-color: #e9ecef;
+  background-color: var(--color-border);
   padding: 0.2em 0.45em;
   border-radius: 4px;
   font-size: 0.88em;
-  color: #343a40;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-mono);
   word-break: break-word;
+}
+
+.markdown-content code,
+.markdown-content pre,
+.markdown-content pre code {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
 }
 
 /* Code blocks (Syntax Highlighting) */
@@ -356,9 +297,8 @@ main {
   font-size: 0.9em;
   overflow-x: auto;
 }
+
 .markdown-content pre code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
   padding: 1em !important;
   display: block;
   line-height: 1.5;
@@ -370,7 +310,7 @@ main {
   border-radius: 6px;
   margin: 1.5em auto;
   display: block;
-  border: 1px solid #e9ecef;
+  border: 1px solid var(--color-border);
 }
 
 /* YouTube Embed Styling */
@@ -384,6 +324,7 @@ main {
   margin: 1.5em 0;
   border-radius: 6px;
 }
+
 .youtube-embed iframe {
   position: absolute;
   top: 0;
@@ -397,18 +338,100 @@ main {
 .bluesky-post .post-content {
   padding: 1.5rem 1.75rem;
 }
+
 .bluesky-post .post-content p {
+  font-family: var(--font-family-serif);
+  font-size: 1.3em;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
   margin-bottom: 0.5em;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-.header-text a {
-  color: #0056b3;
+
+.bluesky-post a {
+  color: var(--color-primary);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 86, 179, 0.2);
+  border-bottom: 1px solid var(--color-primary-light);
 }
-.header-text a:hover {
-  border-bottom-color: rgba(0, 86, 179, 0.5);
+
+.bluesky-post a:hover {
+  border-bottom-color: var(--color-primary-light-hover);
+}
+
+/* Bluesky Post Image Thumbnails */
+.bluesky-thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.bluesky-thumbnail {
+  display: block;
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  background-color: var(--color-background);
+}
+
+.bluesky-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: #bdbdbd;
+}
+
+/* Bluesky Post Rich Text Facets */
+.bluesky-link,
+.bluesky-mention,
+.bluesky-hashtag {
+  color: var(--color-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bluesky-link:hover,
+.bluesky-mention:hover,
+.bluesky-hashtag:hover {
+  border-bottom-color: var(--color-primary-light-hover);
+}
+
+.bluesky-mention {
+  color: var(--color-mention);
+  font-weight: 500;
+}
+
+.bluesky-hashtag {
+  color: var(--color-hashtag);
+}
+
+/* Bluesky Post Video */
+.bluesky-video-container {
+  margin: 1rem 0;
+  border-radius: 8px; /* Match card rounding */
+  overflow: hidden; /* Ensures video respects border-radius */
+  background-color: #000; /* Black background for letterboxing */
+}
+
+.bluesky-video {
+  display: block; /* Remove extra space below video */
+  width: 100%;    /* Make video responsive */
+  max-height: 500px; /* Prevent excessively tall videos */
+  height: auto;
+}
+
+/* Optional styling for video alt text/caption */
+.video-alt-text {
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.85em;
+  color: var(--color-text-muted); /* Gray accent */
+  padding: 0.5rem 0.2rem 0 0.2rem;
+  font-style: italic;
 }
 
 /* === Pagination === */
@@ -432,36 +455,39 @@ main {
   padding: 0.5rem 0.9rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #0056b3;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
   cursor: pointer;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
   font-size: 0.9rem;
   border-radius: 4px;
+  font-family: var(--font-family-sans-serif);
+  font-weight: 500;
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #003d80;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
+  color: var(--color-primary-hover);
+  background-color: var(--color-border);
+  border-color: var(--color-border-light);
 }
 
 .page-item.active .page-link {
   z-index: 3;
-  color: #fff;
-  background-color: #0056b3;
-  border-color: #0056b3;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  font-weight: 700;
 }
 
 .page-item.disabled .page-link {
-  color: #6c757d;
+  color: var(--color-text-muted);
   pointer-events: none;
   cursor: auto;
-  background-color: #fff;
-  border-color: #dee2e6;
+  background-color: var(--color-white);
+  border-color: var(--color-border-light);
   opacity: 0.6;
 }
 
@@ -472,104 +498,25 @@ main {
   text-align: center;
   padding: 3rem 1rem;
   font-size: 1.1em;
-  color: #6c757d;
+  font-family: var(--font-family-sans-serif);
+}
+
+.loading-message {
+  color: var(--color-text-muted);
 }
 
 .error-message {
-  color: #dc3545;
+  color: var(--color-error);
   font-weight: 500;
 }
+
 .info-message {
-  color: #495057;
-}
-/* === Bluesky Post Image Thumbnails === */
-.bluesky-thumbnails-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-  margin-bottom: 8px;
-}
-
-.bluesky-thumbnail {
-  display: block;
-  width: 320px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 6px;
-  cursor: pointer;
-  border: 1px solid #e0e0e0;
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-  background-color: #f8f9fa;
-}
-
-.bluesky-thumbnail:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-color: #bdbdbd;
-}
-
-/* === Bluesky Post Rich Text Facets === */
-.bluesky-link,
-.bluesky-mention,
-.bluesky-hashtag {
-  color: #0056b3;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.bluesky-link:hover,
-.bluesky-mention:hover,
-.bluesky-hashtag:hover {
-  border-bottom-color: rgba(0, 86, 179, 0.5);
-}
-
-.bluesky-mention {
-  color: #004085;
-  font-weight: 500;
-}
-
-.bluesky-hashtag {
-  color: #17a2b8;
-}
-
-.bluesky-post .post-content p {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-/* === Bluesky Post Video === */
-.bluesky-video-container {
-  margin: 1rem 0;
-  border-radius: 8px; /* Match card rounding */
-  overflow: hidden; /* Ensures video respects border-radius */
-  background-color: #000; /* Black background for letterboxing */
-}
-
-.bluesky-video {
-  display: block; /* Remove extra space below video */
-  width: 100%;    /* Make video responsive */
-  max-height: 500px; /* Prevent excessively tall videos */
-  height: auto;
-}
-
-/* Optional styling for video alt text/caption */
-.video-alt-text {
-  font-family: var(--font-family-sans-serif);
-  font-size: 0.85em;
-  color: #6c757d; /* Gray accent */
-  padding: 0.5rem 0.2rem 0 0.2rem;
-  font-style: italic;
+  color: var(--color-info);
 }
 
 footer p {
   text-align: center;
   margin: 2rem 0;
-}
-
-/* === Lightbox Styles (from yet-another-react-lightbox/styles.css) === */
-:root {
-  --yarl__color_backdrop: rgba(0, 0, 0, 0.85);
 }
 
 /* === Responsiveness === */
@@ -594,9 +541,11 @@ footer p {
     max-width: auto;
     margin-left: 0;
   }
+
   .post-card .post-title {
     font-size: 1.6em;
   }
+
   .post-content {
     padding: 0.5rem 1.25rem 1.25rem 1.25rem;
   }
